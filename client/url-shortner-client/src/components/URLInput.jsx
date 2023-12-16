@@ -10,7 +10,7 @@ export default function URLInput() {
   const handleClick = () => {
     processURL(originalURL)
       .then((res) => dispatch(setShortURL(res)))
-      .catch((err) => console.log(err));
+      .catch((err) => alert(err));
     setOriginalURL("");
   };
   return (
