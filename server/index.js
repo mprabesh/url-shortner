@@ -7,6 +7,7 @@ const urlRoute = require("./controllers/urlController");
 
 // Enable CORS for all requests
 app.use(cors());
+app.use(express.static("dist"));
 app.use(express.json());
 mongoose.set("strictQuery", false);
 mongoose
