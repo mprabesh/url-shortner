@@ -2,25 +2,3 @@ node_modules
 .env
 
 
-
-app.post('/h', async (request, response) => {
-    const unitSize = await prisma.Hoodie.findMany({
-        where: {
-            size: request.body.size,
-        },
-    });
-    console.log(user);
-    const postProduct = await prisma.Product.create({
-        data: {
-            productName: request.body.productName,
-            fabric: request.body.fabric,
-            weight: request.body.weight,
-            meterSquare: request.body.meterSquare,
-            color: request.body.color,
-            date: new Date(), 
-            size: request.body.size,
-            perSize: unitSize, 
-        },
-    });
-    console.log(postProduct);
-})
