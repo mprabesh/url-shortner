@@ -14,7 +14,7 @@ mongoose
   .then(() => {
     console.log("DB connected Successfully");
   })
-  .catch((err) => info(err));
+  .catch((err) => console.log(err));
 
 app.use("/prabeshURL", urlRoute);
 
