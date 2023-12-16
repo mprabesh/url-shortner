@@ -7,8 +7,8 @@ const urlValidator = async (req, res, next) => {
   try {
     if (!originalURL) throw "No URL provided";
     if (isValidURL(originalURL)) {
+      console.log("valid url");
       const checkDuplicate = await URL.findOne({ originalURL });
-
       if (checkDuplicate) {
         return res.status(409).send(`${originalURL} already exists.`);
       }
