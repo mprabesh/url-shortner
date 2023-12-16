@@ -31,7 +31,6 @@ urlRoute.get("/:shortCode", async (req, res) => {
 
 urlRoute.post("/shorten/", urlValidator, async (req, res) => {
   try {
-    console.log(BASE_URL);
     let shortURL = `${BASE_URL}/${req.URLCode}`;
     let response = await URL.create({
       originalURL: req.body.originalURL,
